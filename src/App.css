@@ -1,0 +1,270 @@
+/* ===========================
+   Global Dark Theme
+=========================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: hsl(0, 0%, 4%); /* Soft dark gray */
+    color: #e5e5e5;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+}
+
+/* Smooth global transitions */
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   Logos & Animations
+=========================== */
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #90caf9aa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+/* ===========================
+   Cards
+=========================== */
+.class-card, .student-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #2a2b33, #23242a);
+    border-radius: 12px !important;
+    overflow: hidden;
+    border: 1px solid #3b3c45;
+    color: #e5e5e5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.class-card:hover, .student-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    border-color: #7f8cff;
+}
+
+/* Card top gradient bar */
+.class-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7f8cff, #5aa1f7, #5af7c7);
+    border-radius: 12px 12px 0 0;
+}
+
+/* ===========================
+   Card Icons
+=========================== */
+.class-icon {
+    padding: 10px;
+    background: rgba(127,140,255,0.1);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8cff;
+}
+
+/* Delete button */
+.delete-btn {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    border: none;
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.class-card:hover .delete-btn, .student-card:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background: #f44336;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ===========================
+   Stats & Badges
+=========================== */
+.class-stats {
+    background: rgba(127,140,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.badge {
+    font-size: 0.75rem;
+    border-radius: 20px;
+}
+
+.bg-primary-subtle {
+    background-color: rgba(127,140,255,0.1) !important;
+}
+
+.bg-success-subtle {
+    background-color: rgba(90, 161, 247, 0.1) !important;
+}
+
+.text-primary {
+    color: #7f8cff !important;
+}
+
+.text-success {
+    color: #5aa1f7 !important;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.btn-primary {
+    background: linear-gradient(135deg, #7f8cff 0%, #5aa1f7 100%);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #121212;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(127,140,255,0.5);
+    background: linear-gradient(135deg, #5aa1f7 0%, #3f7be0 100%);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(127,140,255,0.3);
+}
+
+/* ===========================
+   Forms
+=========================== */
+.form-control {
+    background-color: #2a2b33;
+    border: 1px solid #3b3c45;
+    color: #e5e5e5;
+}
+
+.form-control:focus {
+    border-color: #7f8cff;
+    box-shadow: 0 0 0 0.2rem rgba(127,140,255,0.25);
+    background-color: #2a2b33;
+    color: #e5e5e5;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* ===========================
+   Students Container
+=========================== */
+.students-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.students-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.students-container::-webkit-scrollbar-track {
+    background: #2a2b33;
+    border-radius: 3px;
+}
+
+.students-container::-webkit-scrollbar-thumb {
+    background: #7f8cff;
+    border-radius: 3px;
+}
+
+.students-container::-webkit-scrollbar-thumb:hover {
+    background: #5aa1f7;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.class-card, .student-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.class-card:nth-child(1), .student-card:nth-child(1) { animation-delay: 0.1s; }
+.class-card:nth-child(2), .student-card:nth-child(2) { animation-delay: 0.2s; }
+.class-card:nth-child(3), .student-card:nth-child(3) { animation-delay: 0.3s; }
+.class-card:nth-child(4), .student-card:nth-child(4) { animation-delay: 0.4s; }
+.class-card:nth-child(5), .student-card:nth-child(5) { animation-delay: 0.5s; }
+.class-card:nth-child(6), .student-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+    .class-card:hover, .student-card:hover {
+        transform: none;
+    }
+
+    .delete-btn {
+        opacity: 1;
+    }
+
+    .container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
